@@ -1,0 +1,129 @@
+<h:html xmlns="http://www.w3.org/2002/xforms"
+        xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Shovel Test / Auger Form</h:title>
+
+    <model>
+      <instance>
+        <faims id="simple_example">
+          <!-- PART 1: Define ui structure -->
+          <tabgroup1>
+             <tab1>
+               <projNum></projNum>
+			   <state></state>
+			   <county></county>
+			   <recorder></recorder>
+			   <fieldSiteNum></fieldSiteNum>
+			   <stpNum></stpNum>
+			   <stpDepth></stpDepth>
+			   <zoneIdescription></zoneIdescription>
+			   <zoneIdepth></zoneIdepth>
+			   <zoneIIdescription></zoneIIdescription>
+			   <zoneIIdepth></zoneIIdepth>
+			   <zoneIIIdescription></zoneIIIdescription>
+			   <zoneIIIdepth></zoneIIIdepth>
+			   <containArt></containArt>
+			   <collectArt></collectArt>
+			   <datetime></datetime>
+			   <soilNote></soilNote>
+			   <saveButton />
+             </tab1>
+          </tabgroup1>
+        </faims>
+      </instance>
+      <bind nodeset="/faims/tabgroup1/tab1/projNum" type="string"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/county" type="string"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/recorder" type="string"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/fieldSiteNum" type="string"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/stpNum" type="integer"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/stpDepth" type="decimal"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/zoneIdescription" type="freetext"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/zoneIdepth" type="decimal"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIdescription" type="freetext"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIdepth" type="decimal"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIIdescription" type="freetext"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIIdepth" type="decimal"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/datetime" type="freetext"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/soilNote" type="freetext"/>
+    </model>
+  </h:head>
+
+  <h:body>
+    <!-- PART 2: Define ui elements -->
+    <group ref="tabgroup1">
+      <label></label>
+      <group ref="tab1">
+         <label>Shovel Test Data</label>
+         <input ref="projNum">
+            <label>Project/Project No.:</label>
+         </input>
+		 <select1 ref="state">
+			<label>State List:</label>
+			<item>
+			  <label>Item A</label>
+			  <value>0</value>
+			</item>
+		 </select1>
+		 <input ref="county">
+            <label>County:</label>
+         </input>
+		 <input ref="recorder">
+            <label>Recorder(s):</label>
+         </input>
+		 <input ref="fieldSiteNum">
+            <label>Field Site #:</label>
+         </input>
+		 <input ref="stpNum">
+            <label>STP #:</label>
+         </input>
+		 <input ref="stpDepth">
+            <label>STP Depth (cmbs):</label>
+         </input>
+		 <input ref="zoneIdescription">
+            <label>Zone I Topsoil Munsell/Texture:</label>
+         </input>
+		 <input ref="zoneIdepth">
+            <label>Zone I Depth (cmbs):</label>
+         </input>
+		 <input ref="zoneIIdescription">
+            <label>Zone II Topsoil Munsell/Texture:</label>
+         </input>
+		 <input ref="zoneIIdepth">
+            <label>Zone II Depth (cmbs):</label>
+         </input>
+		 <input ref="zoneIIIdescription">
+            <label>Zone III Topsoil Munsell/Texture:</label>
+         </input>
+		 <input ref="zoneIIIdepth">
+            <label>Zone III Depth (cmbs):</label>
+         </input>
+		 <select1 ref="containArt" appearance="full">
+			<label>Contains Artifacts?:</label>
+			<item>
+			  <label>Item A</label>
+			  <value>0</value>
+			</item>
+		 </select1>
+		 <select1 ref="collectArt" appearance="full">
+			<label>Artifacts Collected?:</label>
+			<item>
+			  <label>Item A</label>
+			  <value>0</value>
+			</item>
+		 </select1>
+		 <input ref="datetime" faims_read_only="false">
+            <label>Date/Time Logged:</label>
+         </input>
+		 <input ref="soilNote">
+            <label>Soil Notes/Comments:</label>
+         </input>
+		 <trigger ref="saveButton">
+           <label>Save record</label>
+         </trigger>
+      </group>
+    </group>
+  </h:body>
+</h:html>

@@ -1,0 +1,87 @@
+setFieldValue("tabgroup1/tab1/projNum", "Hello World!");
+
+//set state list
+list = new ArrayList();
+			list.add("Alabama");
+			list.add("Alaska"); 
+			list.add("Arizona"); 
+			list.add("Arkansas"); 
+			list.add("California"); 
+			list.add("Colorado"); 
+			list.add("Connecticut"); 
+			list.add("Delaware"); 
+			list.add("District Of Columbia");
+			list.add("Florida"); 
+			list.add("Georgia"); 
+			list.add("Hawaii"); 
+			list.add("Idaho"); 
+			list.add("Illinois"); 
+			list.add("Indiana"); 
+			list.add("Iowa"); 
+			list.add("Kansas"); 
+			list.add("Kentucky"); 
+			list.add("Louisiana"); 
+			list.add("Maine"); 
+			list.add("Maryland"); 
+			list.add("Massachusetts"); 
+			list.add("Michigan"); 
+			list.add("Minnesota"); 
+			list.add("Mississippi"); 
+			list.add("Missouri"); 
+			list.add("Montana"); 
+			list.add("Nebraska"); 
+			list.add("Nevada"); 
+			list.add("New Hampshire"); 
+			list.add("New Jersey"); 
+			list.add("New Mexico"); 
+			list.add("New York"); 
+			list.add("North Carolina"); 
+			list.add("North Dakota"); 
+			list.add("Ohio"); 
+			list.add("Oklahoma"); 
+			list.add("Oregon"); 
+			list.add("Pennsylvania"); 
+			list.add("Rhode Island"); 
+			list.add("South Carolina"); 
+			list.add("South Dakota"); 
+			list.add("Tennessee"); 
+			list.add("Texas"); 
+			list.add("Utah"); 
+			list.add("Vermont"); 
+			list.add("Virginia"); 
+			list.add("Washington"); 
+			list.add("West Virginia"); 
+			list.add("Wisconsin"); 
+			list.add("Wyoming"); 
+populateDropDown("tabgroup1/tab1/state", list);
+
+//set yes/no list
+bool = new ArrayList();
+	bool.add("Yes");
+	bool.add("No");
+populateRadioGroup("tabgroup1/tab1/containArt",bool);
+populateRadioGroup("tabgroup1/tab1/collectArt",bool);
+
+//auto set the time on records
+timestamp = getCurrentTime();
+setFieldValue("tabgroup1/tab1/datetime", timestamp);
+
+/*//update the date with date picker
+onEvent("tabgroup1/tab1/datetime", "click", "editDatetime()");
+
+editDatetime(){
+	showToast("Edit Datetime");
+	dateDef = createViewDef().createDatePicker().setLabel("Edit Date/Time Logged:");
+	createView("tabgroup1/tab1/editTime", dateDef);
+}*/
+
+onEvent("tabgroup1/tab1/saveButton", "click","saveData()");
+
+saveData(){
+	/*editTime = getFieldValue("tabgroup1/tab1/editTime"){
+		if(editTime){
+			String date = getFieldValue("tabgroup1/tab1/editTime");
+			setFieldValue("tabgroup1/tab1/datetime", date);
+		}*/
+	showToast("Record saved!");
+}
