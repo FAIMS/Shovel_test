@@ -1,5 +1,5 @@
-# ABout:
-Archaeological shovel testing workflow in the US, done by anonymous contributor.
+# About this module:
+Archaeological shovel testing workflow in the US, done by anonymous contributor, using the [FAIMS User to Deveoper Guide](https://www.fedarch.org/support/#3).
 
 ## Screenshots:
 
